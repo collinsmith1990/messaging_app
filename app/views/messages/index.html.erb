@@ -1,0 +1,10 @@
+<ul>
+<% @messages.each do |message| %>
+  <li>
+    <h4>To: <%= message.to.user_name %></h4>
+    <h4>From: <%= message.from.user_name %></h4>
+    <p><%= message.content %>
+    <%= link_to "View", user_message_path(@user, message) %>
+  </li>
+<% end %>
+</ul>

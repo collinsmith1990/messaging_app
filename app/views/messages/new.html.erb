@@ -1,0 +1,7 @@
+<h3>To: <%= @user.user_name %></h3>
+<h3>From: <%= current_user.user_name %></h3>
+<%= form_for [@user, @message] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control"%>
+  <%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>

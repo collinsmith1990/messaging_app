@@ -1,0 +1,8 @@
+<%= link_to "My Messages", user_messages_path(current_user, message_type: "received") %>
+<%= link_to "Sent Messages", user_messages_path(current_user, message_type: "sent") %>
+<h4>Select a user to send a message to.</h4>
+<% @users.each do |user| %>
+  <% unless user == current_user %>
+    <li><%= link_to user.user_name, new_user_message_path(user) %></li>
+  <% end %>
+<% end %>

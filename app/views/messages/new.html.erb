@@ -1,6 +1,9 @@
 <h3>To: <%= @user.user_name %></h3>
 <h3>From: <%= current_user.user_name %></h3>
 <%= form_for [@user, @message] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.label :subject %>
+  <%= f.text_field :subject, class: "form-control"%>
   <%= f.label :content %>
   <%= f.text_area :content, class: "form-control"%>
   <%= f.submit "Send", class: "btn btn-primary" %>

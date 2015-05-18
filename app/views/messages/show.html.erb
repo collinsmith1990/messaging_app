@@ -1,6 +1,7 @@
 <div class="col-md-6 col-md-offset-3">
   <h3>To: <%= @message.to.user_name %></h3>
   <h3>From: <%= @message.from.user_name %></h3>
+  <h3>Subject: <%= @message.subject %></h3>
   <p><%= @message.content %></p>
   <% unless current_user == @message.from %>
     <%= link_to "reply", new_user_message_path(@message.from) %>

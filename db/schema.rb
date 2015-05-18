@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517231015) do
+ActiveRecord::Schema.define(version: 20150518025940) do
 
   create_table "messages", force: true do |t|
     t.integer  "to_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150517231015) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "subject"
   end
 
   add_index "messages", ["from_id"], name: "index_messages_on_from_id"
